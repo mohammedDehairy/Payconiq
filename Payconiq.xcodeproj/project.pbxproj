@@ -7,14 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1F8B0621F3231A00D78747 /* TransactionListPageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0521F3231A00D78747 /* TransactionListPageBuilder.swift */; };
+		3D1F8B0821F3268E00D78747 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0721F3268E00D78747 /* ViewModel.swift */; };
+		3D1F8B0C21F3288800D78747 /* TransactionViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0B21F3288800D78747 /* TransactionViewBuilder.swift */; };
+		3D1F8B0E21F328AD00D78747 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0D21F328AD00D78747 /* TransactionViewModel.swift */; };
+		3D1F8B1021F32AE000D78747 /* CompoundViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0F21F32AE000D78747 /* CompoundViewBuilder.swift */; };
+		3D1F8B1221F330CA00D78747 /* CompoundViewLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1121F330CA00D78747 /* CompoundViewLayouter.swift */; };
+		3D1F8B1421F3312E00D78747 /* ViewLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1321F3312E00D78747 /* ViewLayouter.swift */; };
+		3D1F8B1621F3321900D78747 /* TransactionViewLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1521F3321900D78747 /* TransactionViewLayouter.swift */; };
+		3D1F8B1821F3325300D78747 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1721F3325300D78747 /* TransactionView.swift */; };
+		3D1F8B1A21F335DC00D78747 /* TransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1921F335DC00D78747 /* TransactionDataSource.swift */; };
+		3D1F8B1E21F33BC600D78747 /* ViewModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1D21F33BC600D78747 /* ViewModelParser.swift */; };
+		3D1F8B2021F33C0100D78747 /* TransactionViewModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1F21F33C0100D78747 /* TransactionViewModelParser.swift */; };
+		3D1F8B2221F345AE00D78747 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B2121F345AE00D78747 /* CollectionViewController.swift */; };
+		3D1F8B2421F35A4500D78747 /* TransactionViewModelParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B2321F35A4400D78747 /* TransactionViewModelParserTest.swift */; };
+		3D1F8B2621F35A7500D78747 /* test_transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F8B2521F35A7500D78747 /* test_transactions.json */; };
+		3D1F8B2721F35B5000D78747 /* TransactionViewModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1F21F33C0100D78747 /* TransactionViewModelParser.swift */; };
+		3D1F8B2921F35B9B00D78747 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0721F3268E00D78747 /* ViewModel.swift */; };
+		3D1F8B2A21F35BE000D78747 /* ViewModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1D21F33BC600D78747 /* ViewModelParser.swift */; };
+		3D1F8B2E21F3601D00D78747 /* DividerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B2D21F3601D00D78747 /* DividerViewModel.swift */; };
+		3D1F8B3021F3604800D78747 /* DividerViewLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B2F21F3604800D78747 /* DividerViewLayouter.swift */; };
+		3D1F8B3221F3609300D78747 /* DividerViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3121F3609300D78747 /* DividerViewBuilder.swift */; };
+		3D1F8B3421F360B100D78747 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3321F360B100D78747 /* DividerView.swift */; };
+		3D1F8B3721F363C800D78747 /* DividerDecoratorViewLayouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3621F363C800D78747 /* DividerDecoratorViewLayouter.swift */; };
+		3D1F8B3921F364B800D78747 /* DividerDecoratorViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3821F364B800D78747 /* DividerDecoratorViewBuilder.swift */; };
+		3D1F8B3B21F364D600D78747 /* DividerDecoratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3A21F364D500D78747 /* DividerDecoratorView.swift */; };
+		3D1F8B4021F372FB00D78747 /* UIColor+Payconiq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B3F21F372FB00D78747 /* UIColor+Payconiq.swift */; };
+		3D1F8B4221F3793100D78747 /* TransactionPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B4121F3793100D78747 /* TransactionPageController.swift */; };
 		3D69EE2921F31DAF006209F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2821F31DAF006209F1 /* AppDelegate.swift */; };
-		3D69EE2B21F31DAF006209F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2A21F31DAF006209F1 /* ViewController.swift */; };
+		3D69EE2B21F31DAF006209F1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2A21F31DAF006209F1 /* RootViewController.swift */; };
 		3D69EE2E21F31DAF006209F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D69EE2C21F31DAF006209F1 /* Main.storyboard */; };
 		3D69EE3121F31DAF006209F1 /* Payconiq.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2F21F31DAF006209F1 /* Payconiq.xcdatamodeld */; };
 		3D69EE3321F31DB1006209F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D69EE3221F31DB1006209F1 /* Assets.xcassets */; };
 		3D69EE3621F31DB1006209F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D69EE3421F31DB1006209F1 /* LaunchScreen.storyboard */; };
 		3D69EE4121F31DB1006209F1 /* PayconiqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE4021F31DB1006209F1 /* PayconiqTests.swift */; };
 		3D69EE4C21F31DB1006209F1 /* PayconiqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE4B21F31DB1006209F1 /* PayconiqUITests.swift */; };
+		5BCD88786CB77C7785E4A105 /* Pods_PayconiqTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5BEB51732B017DB87495C3 /* Pods_PayconiqTests.framework */; };
+		81672DD2677B7B053FDCE33D /* Pods_Payconiq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31276ED21D89EFFD6EDAAAD1 /* Pods_Payconiq.framework */; };
+		BF26538DA9AF7A2AF7F1EB47 /* Pods_PayconiqUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C882C65E268CB8DAC499E89C /* Pods_PayconiqUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +65,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31276ED21D89EFFD6EDAAAD1 /* Pods_Payconiq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payconiq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1F8B0521F3231A00D78747 /* TransactionListPageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListPageBuilder.swift; sourceTree = "<group>"; };
+		3D1F8B0721F3268E00D78747 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3D1F8B0B21F3288800D78747 /* TransactionViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewBuilder.swift; sourceTree = "<group>"; };
+		3D1F8B0D21F328AD00D78747 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		3D1F8B0F21F32AE000D78747 /* CompoundViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewBuilder.swift; sourceTree = "<group>"; };
+		3D1F8B1121F330CA00D78747 /* CompoundViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundViewLayouter.swift; sourceTree = "<group>"; };
+		3D1F8B1321F3312E00D78747 /* ViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayouter.swift; sourceTree = "<group>"; };
+		3D1F8B1521F3321900D78747 /* TransactionViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewLayouter.swift; sourceTree = "<group>"; };
+		3D1F8B1721F3325300D78747 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		3D1F8B1921F335DC00D78747 /* TransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataSource.swift; sourceTree = "<group>"; };
+		3D1F8B1D21F33BC600D78747 /* ViewModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelParser.swift; sourceTree = "<group>"; };
+		3D1F8B1F21F33C0100D78747 /* TransactionViewModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModelParser.swift; sourceTree = "<group>"; };
+		3D1F8B2121F345AE00D78747 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		3D1F8B2321F35A4400D78747 /* TransactionViewModelParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModelParserTest.swift; sourceTree = "<group>"; };
+		3D1F8B2521F35A7500D78747 /* test_transactions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test_transactions.json; sourceTree = "<group>"; };
+		3D1F8B2D21F3601D00D78747 /* DividerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewModel.swift; sourceTree = "<group>"; };
+		3D1F8B2F21F3604800D78747 /* DividerViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewLayouter.swift; sourceTree = "<group>"; };
+		3D1F8B3121F3609300D78747 /* DividerViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewBuilder.swift; sourceTree = "<group>"; };
+		3D1F8B3321F360B100D78747 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		3D1F8B3621F363C800D78747 /* DividerDecoratorViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerDecoratorViewLayouter.swift; sourceTree = "<group>"; };
+		3D1F8B3821F364B800D78747 /* DividerDecoratorViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerDecoratorViewBuilder.swift; sourceTree = "<group>"; };
+		3D1F8B3A21F364D500D78747 /* DividerDecoratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerDecoratorView.swift; sourceTree = "<group>"; };
+		3D1F8B3F21F372FB00D78747 /* UIColor+Payconiq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Payconiq.swift"; sourceTree = "<group>"; };
+		3D1F8B4121F3793100D78747 /* TransactionPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPageController.swift; sourceTree = "<group>"; };
 		3D69EE2521F31DAF006209F1 /* Payconiq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payconiq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D69EE2821F31DAF006209F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D69EE2A21F31DAF006209F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D69EE2A21F31DAF006209F1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3D69EE2D21F31DAF006209F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D69EE3021F31DAF006209F1 /* Payconiq.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Payconiq.xcdatamodel; sourceTree = "<group>"; };
 		3D69EE3221F31DB1006209F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +104,14 @@
 		3D69EE4721F31DB1006209F1 /* PayconiqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayconiqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D69EE4B21F31DB1006209F1 /* PayconiqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayconiqUITests.swift; sourceTree = "<group>"; };
 		3D69EE4D21F31DB1006209F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B32CF581DB4C07A034D6C8D /* Pods-PayconiqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayconiqTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayconiqTests/Pods-PayconiqTests.release.xcconfig"; sourceTree = "<group>"; };
+		686D3576257352ED01086999 /* Pods-PayconiqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayconiqUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayconiqUITests/Pods-PayconiqUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B7837D82751E496AFEED29E /* Pods-Payconiq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payconiq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Payconiq/Pods-Payconiq.debug.xcconfig"; sourceTree = "<group>"; };
+		90EEC1116E9469C66F0ED584 /* Pods-PayconiqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayconiqTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayconiqTests/Pods-PayconiqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B5BEB51732B017DB87495C3 /* Pods_PayconiqTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayconiqTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B49A69DD93B6978A2DA28A /* Pods-PayconiqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayconiqUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayconiqUITests/Pods-PayconiqUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C882C65E268CB8DAC499E89C /* Pods_PayconiqUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayconiqUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB58ADC929E454450D1CB166 /* Pods-Payconiq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Payconiq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Payconiq/Pods-Payconiq.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81672DD2677B7B053FDCE33D /* Pods_Payconiq.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCD88786CB77C7785E4A105 /* Pods_PayconiqTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +135,96 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF26538DA9AF7A2AF7F1EB47 /* Pods_PayconiqUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B5304A301733C1BDEFE005A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B7837D82751E496AFEED29E /* Pods-Payconiq.debug.xcconfig */,
+				DB58ADC929E454450D1CB166 /* Pods-Payconiq.release.xcconfig */,
+				90EEC1116E9469C66F0ED584 /* Pods-PayconiqTests.debug.xcconfig */,
+				4B32CF581DB4C07A034D6C8D /* Pods-PayconiqTests.release.xcconfig */,
+				686D3576257352ED01086999 /* Pods-PayconiqUITests.debug.xcconfig */,
+				B7B49A69DD93B6978A2DA28A /* Pods-PayconiqUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D1F8B0421F322E700D78747 /* TransactionListPage */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B0521F3231A00D78747 /* TransactionListPageBuilder.swift */,
+				3D1F8B1F21F33C0100D78747 /* TransactionViewModelParser.swift */,
+				3D1F8B2321F35A4400D78747 /* TransactionViewModelParserTest.swift */,
+				3D1F8B1921F335DC00D78747 /* TransactionDataSource.swift */,
+				3D1F8B4121F3793100D78747 /* TransactionPageController.swift */,
+			);
+			path = TransactionListPage;
+			sourceTree = "<group>";
+		};
+		3D1F8B2B21F35FF500D78747 /* GenericContent */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B4421F37E7100D78747 /* Transaction */,
+				3D1F8B3521F363A700D78747 /* DividerDecorator */,
+				3D1F8B2C21F3600500D78747 /* Divider */,
+			);
+			path = GenericContent;
+			sourceTree = "<group>";
+		};
+		3D1F8B2C21F3600500D78747 /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B2D21F3601D00D78747 /* DividerViewModel.swift */,
+				3D1F8B2F21F3604800D78747 /* DividerViewLayouter.swift */,
+				3D1F8B3121F3609300D78747 /* DividerViewBuilder.swift */,
+				3D1F8B3321F360B100D78747 /* DividerView.swift */,
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
+		3D1F8B3521F363A700D78747 /* DividerDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B3621F363C800D78747 /* DividerDecoratorViewLayouter.swift */,
+				3D1F8B3821F364B800D78747 /* DividerDecoratorViewBuilder.swift */,
+				3D1F8B3A21F364D500D78747 /* DividerDecoratorView.swift */,
+			);
+			path = DividerDecorator;
+			sourceTree = "<group>";
+		};
+		3D1F8B3E21F372E200D78747 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B3F21F372FB00D78747 /* UIColor+Payconiq.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3D1F8B4421F37E7100D78747 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B0B21F3288800D78747 /* TransactionViewBuilder.swift */,
+				3D1F8B0D21F328AD00D78747 /* TransactionViewModel.swift */,
+				3D1F8B1521F3321900D78747 /* TransactionViewLayouter.swift */,
+				3D1F8B1721F3325300D78747 /* TransactionView.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		3D1F8B4521F37F4400D78747 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F8B0421F322E700D78747 /* TransactionListPage */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		3D69EE1C21F31DAF006209F1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +232,8 @@
 				3D69EE3F21F31DB1006209F1 /* PayconiqTests */,
 				3D69EE4A21F31DB1006209F1 /* PayconiqUITests */,
 				3D69EE2621F31DAF006209F1 /* Products */,
+				1B5304A301733C1BDEFE005A /* Pods */,
+				B130ACDDD694664962E29299 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,7 +251,16 @@
 			isa = PBXGroup;
 			children = (
 				3D69EE2821F31DAF006209F1 /* AppDelegate.swift */,
-				3D69EE2A21F31DAF006209F1 /* ViewController.swift */,
+				3D69EE2A21F31DAF006209F1 /* RootViewController.swift */,
+				3D1F8B2121F345AE00D78747 /* CollectionViewController.swift */,
+				3D1F8B0721F3268E00D78747 /* ViewModel.swift */,
+				3D1F8B0F21F32AE000D78747 /* CompoundViewBuilder.swift */,
+				3D1F8B1121F330CA00D78747 /* CompoundViewLayouter.swift */,
+				3D1F8B1321F3312E00D78747 /* ViewLayouter.swift */,
+				3D1F8B1D21F33BC600D78747 /* ViewModelParser.swift */,
+				3D1F8B3E21F372E200D78747 /* Extensions */,
+				3D1F8B2B21F35FF500D78747 /* GenericContent */,
+				3D1F8B4521F37F4400D78747 /* Pages */,
 				3D69EE2C21F31DAF006209F1 /* Main.storyboard */,
 				3D69EE3221F31DB1006209F1 /* Assets.xcassets */,
 				3D69EE3421F31DB1006209F1 /* LaunchScreen.storyboard */,
@@ -115,6 +275,7 @@
 			children = (
 				3D69EE4021F31DB1006209F1 /* PayconiqTests.swift */,
 				3D69EE4221F31DB1006209F1 /* Info.plist */,
+				3D1F8B2521F35A7500D78747 /* test_transactions.json */,
 			);
 			path = PayconiqTests;
 			sourceTree = "<group>";
@@ -128,6 +289,16 @@
 			path = PayconiqUITests;
 			sourceTree = "<group>";
 		};
+		B130ACDDD694664962E29299 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31276ED21D89EFFD6EDAAAD1 /* Pods_Payconiq.framework */,
+				9B5BEB51732B017DB87495C3 /* Pods_PayconiqTests.framework */,
+				C882C65E268CB8DAC499E89C /* Pods_PayconiqUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D69EE5021F31DB1006209F1 /* Build configuration list for PBXNativeTarget "Payconiq" */;
 			buildPhases = (
+				69D069906751AA0B35248DD7 /* [CP] Check Pods Manifest.lock */,
 				3D69EE2121F31DAF006209F1 /* Sources */,
 				3D69EE2221F31DAF006209F1 /* Frameworks */,
 				3D69EE2321F31DAF006209F1 /* Resources */,
+				9C4E2248C1EEC433961A4BA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D69EE5321F31DB1006209F1 /* Build configuration list for PBXNativeTarget "PayconiqTests" */;
 			buildPhases = (
+				2F95FE8587C992EE8093C4D5 /* [CP] Check Pods Manifest.lock */,
 				3D69EE3821F31DB1006209F1 /* Sources */,
 				3D69EE3921F31DB1006209F1 /* Frameworks */,
 				3D69EE3A21F31DB1006209F1 /* Resources */,
@@ -170,6 +344,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D69EE5621F31DB1006209F1 /* Build configuration list for PBXNativeTarget "PayconiqUITests" */;
 			buildPhases = (
+				CE773219EB5C7A7979A9EC33 /* [CP] Check Pods Manifest.lock */,
 				3D69EE4321F31DB1006209F1 /* Sources */,
 				3D69EE4421F31DB1006209F1 /* Frameworks */,
 				3D69EE4521F31DB1006209F1 /* Resources */,
@@ -242,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1F8B2621F35A7500D78747 /* test_transactions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +430,135 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F95FE8587C992EE8093C4D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayconiqTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69D069906751AA0B35248DD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Payconiq-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C4E2248C1EEC433961A4BA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Payconiq/Pods-Payconiq-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Payconiq/Pods-Payconiq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE773219EB5C7A7979A9EC33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayconiqUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D69EE2121F31DAF006209F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D69EE2B21F31DAF006209F1 /* ViewController.swift in Sources */,
+				3D1F8B1621F3321900D78747 /* TransactionViewLayouter.swift in Sources */,
+				3D1F8B1A21F335DC00D78747 /* TransactionDataSource.swift in Sources */,
+				3D1F8B4221F3793100D78747 /* TransactionPageController.swift in Sources */,
+				3D1F8B3221F3609300D78747 /* DividerViewBuilder.swift in Sources */,
+				3D1F8B2E21F3601D00D78747 /* DividerViewModel.swift in Sources */,
+				3D1F8B1221F330CA00D78747 /* CompoundViewLayouter.swift in Sources */,
+				3D1F8B4021F372FB00D78747 /* UIColor+Payconiq.swift in Sources */,
+				3D1F8B1421F3312E00D78747 /* ViewLayouter.swift in Sources */,
+				3D1F8B2221F345AE00D78747 /* CollectionViewController.swift in Sources */,
+				3D1F8B0C21F3288800D78747 /* TransactionViewBuilder.swift in Sources */,
+				3D1F8B0821F3268E00D78747 /* ViewModel.swift in Sources */,
+				3D1F8B1821F3325300D78747 /* TransactionView.swift in Sources */,
+				3D1F8B0621F3231A00D78747 /* TransactionListPageBuilder.swift in Sources */,
+				3D1F8B1021F32AE000D78747 /* CompoundViewBuilder.swift in Sources */,
+				3D1F8B3B21F364D600D78747 /* DividerDecoratorView.swift in Sources */,
+				3D69EE2B21F31DAF006209F1 /* RootViewController.swift in Sources */,
 				3D69EE3121F31DAF006209F1 /* Payconiq.xcdatamodeld in Sources */,
+				3D1F8B3421F360B100D78747 /* DividerView.swift in Sources */,
+				3D1F8B3021F3604800D78747 /* DividerViewLayouter.swift in Sources */,
+				3D1F8B1E21F33BC600D78747 /* ViewModelParser.swift in Sources */,
+				3D1F8B2021F33C0100D78747 /* TransactionViewModelParser.swift in Sources */,
+				3D1F8B3921F364B800D78747 /* DividerDecoratorViewBuilder.swift in Sources */,
 				3D69EE2921F31DAF006209F1 /* AppDelegate.swift in Sources */,
+				3D1F8B3721F363C800D78747 /* DividerDecoratorViewLayouter.swift in Sources */,
+				3D1F8B0E21F328AD00D78747 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +566,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1F8B2921F35B9B00D78747 /* ViewModel.swift in Sources */,
+				3D1F8B2721F35B5000D78747 /* TransactionViewModelParser.swift in Sources */,
+				3D1F8B2421F35A4500D78747 /* TransactionViewModelParserTest.swift in Sources */,
 				3D69EE4121F31DB1006209F1 /* PayconiqTests.swift in Sources */,
+				3D1F8B2A21F35BE000D78747 /* ViewModelParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,11 +735,13 @@
 		};
 		3D69EE5121F31DB1006209F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B7837D82751E496AFEED29E /* Pods-Payconiq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 656PJL646M;
 				INFOPLIST_FILE = Payconiq/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,11 +755,13 @@
 		};
 		3D69EE5221F31DB1006209F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB58ADC929E454450D1CB166 /* Pods-Payconiq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 656PJL646M;
 				INFOPLIST_FILE = Payconiq/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +775,7 @@
 		};
 		3D69EE5421F31DB1006209F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EEC1116E9469C66F0ED584 /* Pods-PayconiqTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +797,7 @@
 		};
 		3D69EE5521F31DB1006209F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B32CF581DB4C07A034D6C8D /* Pods-PayconiqTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +819,7 @@
 		};
 		3D69EE5721F31DB1006209F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686D3576257352ED01086999 /* Pods-PayconiqUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +840,7 @@
 		};
 		3D69EE5821F31DB1006209F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B49A69DD93B6978A2DA28A /* Pods-PayconiqUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

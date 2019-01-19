@@ -1,0 +1,29 @@
+[
+  {
+    "coordinates": "4.8432112, 52.3872824",
+    "date": "8-01-18 14:18",
+    "effective date": "9-01-18 14:18",
+    "description": "Transaction 1",
+    "amount": "-86,21"
+  },
+  {
+    "coordinates": "4.8428249, 52.3875443",
+    "date": "9-01-18 13:12",
+    "effective date": "10-01-18 13:12",
+    "description": "Transaction 2",
+    "amount": "-81,53"
+  },
+  {
+    "coordinates": "4.8422241, 52.3877146",
+    "date": "18-01-18 20:39",
+    "effective date": "19-01-18 20:39",
+    "description": "Transaction 3",
+    "amount": "10,47"
+  },
+{
+"date": "18-01-18 20:39",
+"effective date": "19-01-18 20:39",
+"description": "Transaction 3",
+"amount": "10,47"
+}
+]
