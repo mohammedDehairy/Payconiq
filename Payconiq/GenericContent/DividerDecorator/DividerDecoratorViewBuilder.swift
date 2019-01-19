@@ -10,11 +10,11 @@ import CollectionKit
 
 final class DividerDecoratorViewBuilder: ViewBuilder {
     let subBuilder: ViewBuilder
-    let subLayouter: ViewLayouter
     let dividerBuilder: DividerViewBuilder
-    init(subBuilder: ViewBuilder, subLayouter: ViewLayouter, dividerBuilder: DividerViewBuilder) {
+    let layouter: ViewLayouter
+    init(subBuilder: ViewBuilder, layouter: ViewLayouter, dividerBuilder: DividerViewBuilder) {
         self.subBuilder = subBuilder
-        self.subLayouter = subLayouter
+        self.layouter = layouter
         self.dividerBuilder = dividerBuilder
     }
     override func view(data: ViewModel, index: Int) -> UIView {
@@ -27,8 +27,6 @@ final class DividerDecoratorViewBuilder: ViewBuilder {
         guard let view = view as? DividerDecoratorView else { return }
         subBuilder.update(view: view.subView, data: data, index: index)
         dividerBuilder.update(view: view.dividerView, data: DividerViewModel(), index: index)
-        let subViewSize = subLayouter.layout(for: data, constraintWidth: UIScreen.main.bounds.size.width).size
-        view.subView.frame = CGRect(origin: CGPoint.zero, size: subViewSize)
-        view.dividerView.frame = CGRect(origin: CGPoint(x: 0, y: view.subView.frame.maxY), size: CGSize(width: UIScreen.main.bounds.width, height: 1))
+        layouter.layout(view: view, data: data, index: index, constraintWidth: UIScreen.main.bounds.size.width)
     }
 }

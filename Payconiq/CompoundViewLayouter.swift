@@ -13,8 +13,12 @@ final class CompoundViewLayouter: ViewLayouter {
     init(layouters: [String: ViewLayouter]) {
         self.layouters = layouters
     }
-    func layout(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGRect {
-        guard let layouter = layouters[String(describing: type(of: viewModel))] else { return CGRect.zero }
-        return layouter.layout(for: viewModel, constraintWidth: constraintWidth)
+    func layout(view: UIView, data: ViewModel, index: Int, constraintWidth: CGFloat) {
+        guard let layouter = layouters[String(describing: type(of: data))] else { return }
+        layouter.layout(view: view, data: data, index: index, constraintWidth: constraintWidth)
+    }
+    func size(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGSize {
+        guard let layouter = layouters[String(describing: type(of: viewModel))] else { return CGSize.zero }
+        return layouter.size(for: viewModel, constraintWidth: constraintWidth)
     }
 }

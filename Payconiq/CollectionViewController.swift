@@ -13,9 +13,11 @@ class CollectionViewController: UIViewController {
 
     private let provider: BasicProvider<ViewModel, UIView>
     private let collectionView: CollectionView
+    let refreshControl: UIRefreshControl
     init(provider: BasicProvider<ViewModel, UIView>, collectionView: CollectionView) {
         self.provider = provider
         self.collectionView = collectionView
+        self.refreshControl = UIRefreshControl()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +28,7 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
+        collectionView.refreshControl = refreshControl
     }
     
     override func viewDidLayoutSubviews() {
@@ -35,8 +38,13 @@ class CollectionViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        collectionView.alpha = 0.0
         coordinator.animate(alongsideTransition: {[weak self] _ in
             self?.collectionView.reloadData()
-            }, completion: nil)
+            }, completion: {[weak self] _ in
+                UIView.animate(withDuration: 0.2, animations: {
+                    self?.collectionView.alpha = 1.0
+                })
+        })
     }
 }

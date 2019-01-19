@@ -10,8 +10,10 @@ import CollectionKit
 
 final class TransactionViewBuilder: ViewBuilder {
     let dateFormatter: DateFormatter
-    init(dateFormatter: DateFormatter) {
+    let layouter: ViewLayouter
+    init(dateFormatter: DateFormatter, layouter: ViewLayouter) {
         self.dateFormatter = dateFormatter
+        self.layouter = layouter
     }
     override func view(data: ViewModel, index: Int) -> UIView {
         guard data is TransactionViewModel else { return UIView() }
@@ -30,8 +32,6 @@ final class TransactionViewBuilder: ViewBuilder {
         view.amoutLabel.font = UIFont.boldSystemFont(ofSize: 20)
         view.textLabel.font = UIFont.systemFont(ofSize: 15)
         view.dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
-        view.dateLabel.frame = CGRect(origin: CGPoint(x: (constraintWidth - view.dateLabel.intrinsicContentSize.width) * 0.1, y: 20), size: view.dateLabel.intrinsicContentSize)
-        view.amoutLabel.frame = CGRect(origin: CGPoint(x: (constraintWidth - view.amoutLabel.intrinsicContentSize.width) * 0.1, y: view.dateLabel.frame.maxY + 10), size: view.amoutLabel.intrinsicContentSize)
-        view.textLabel.frame = CGRect(origin: CGPoint(x: (constraintWidth - view.textLabel.intrinsicContentSize.width) * 0.1, y: view.amoutLabel.frame.maxY + 10), size: view.textLabel.intrinsicContentSize)
+        layouter.layout(view: view, data: model, index: index, constraintWidth: constraintWidth)
     }
 }

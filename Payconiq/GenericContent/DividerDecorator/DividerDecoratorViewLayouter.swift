@@ -15,9 +15,18 @@ final class DividerDecoratorViewLayouter: ViewLayouter {
         self.subLayouter = subLayouter
         self.dividerLayouter = dividerLayouter
     }
-    func layout(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGRect {
-        let subLayout = subLayouter.layout(for: viewModel, constraintWidth: constraintWidth)
-        let dividerLayout = dividerLayouter.layout(for: DividerViewModel(), constraintWidth: constraintWidth)
-        return CGRect(origin: CGPoint.zero, size: CGSize(width: constraintWidth, height: subLayout.height + dividerLayout.height))
+    
+    func layout(view: UIView, data: ViewModel, index: Int, constraintWidth: CGFloat) {
+        guard let view = view as? DividerDecoratorView else { return }
+        subLayouter.layout(view: view, data: data, index: index, constraintWidth: constraintWidth)
+        dividerLayouter.layout(view: view.dividerView, data: DividerViewModel(), index: index, constraintWidth: constraintWidth)
+        view.dividerView.frame.origin = CGPoint(x: view.subView.frame.origin.x, y: view.subView.frame.maxY)
+        view.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: constraintWidth, height: view.subView.frame.size.height + view.dividerView.frame.size.height))
+    }
+    
+    func size(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGSize {
+        let subSize = subLayouter.size(for: viewModel, constraintWidth: constraintWidth)
+        let dividerSize = dividerLayouter.size(for: DividerViewModel(), constraintWidth: constraintWidth)
+        return CGSize(width: constraintWidth, height: subSize.height + dividerSize.height)
     }
 }

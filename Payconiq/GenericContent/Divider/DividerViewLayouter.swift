@@ -9,8 +9,12 @@
 import UIKit
 
 final class DividerViewLayouter: ViewLayouter {
-    func layout(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGRect {
-        guard let _ = viewModel as? DividerViewModel else { return CGRect.zero }
-        return CGRect(origin: CGPoint.zero, size: CGSize(width: constraintWidth, height: 1))
+    func layout(view: UIView, data: ViewModel, index: Int, constraintWidth: CGFloat) {
+        view.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: constraintWidth, height: 1))
+    }
+    
+    func size(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGSize {
+        guard let _ = viewModel as? DividerViewModel else { return CGSize.zero }
+        return CGSize(width: constraintWidth, height: 1)
     }
 }

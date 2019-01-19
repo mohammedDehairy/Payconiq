@@ -9,23 +9,35 @@
 import UIKit
 import CollectionKit
 
-class RootViewController: UIViewController {
-    private let controller: TransactionPageController = TransactionPageController(builder: TransactionListPageBuilder())
-    private lazy var transactionsViewController: CollectionViewController = {
-        return controller.builder.viewController
+class RootViewController: UIViewController, TransactionDetailsPresenter {
+    private lazy var controller: TransactionPageController = {
+        return TransactionPageController(builder: TransactionListPageBuilder(), presenter: self)
+    }()
+    
+    private lazy var navigationViewController: UINavigationController = {
+        return UINavigationController(rootViewController: controller.builder.viewController)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transactionsViewController.willMove(toParent: self)
-        addChild(transactionsViewController)
-        view.addSubview(transactionsViewController.view)
-        transactionsViewController.didMove(toParent: nil)
+        navigationViewController.willMove(toParent: self)
+        addChild(navigationViewController)
+        view.addSubview(navigationViewController.view)
+        navigationViewController.didMove(toParent: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        transactionsViewController.view.frame = CGRect(origin: CGPoint.zero, size: view.bounds.size)
+        navigationViewController.view.frame = CGRect(origin: CGPoint.zero, size: view.bounds.size)
+    }
+    
+    func presen(model: TransactionViewModel, animated: Bool, completion: (() -> Void)) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailsViewController = storyboard.instantiateViewController(withIdentifier: "TransactionDetailsViewController") as? TransactionDetailsViewController else { return }
+        detailsViewController.model = model
+        detailsViewController.title = model.description
+        detailsViewController.view.backgroundColor = UIColor.white
+        navigationViewController.pushViewController(detailsViewController, animated: true)
     }
 }
 

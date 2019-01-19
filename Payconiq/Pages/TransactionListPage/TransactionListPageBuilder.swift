@@ -27,18 +27,25 @@ final class TransactionListPageBuilder {
     lazy var provider: BasicProvider<ViewModel, UIView> = {
         let viewsource = CompoundViewBuilder(builders: builders)
         let sizesource: (Int, ViewModel, CGSize) -> CGSize = {[unowned self] index, data, collectionSize in
-            return self.layouter.layout(for: data, constraintWidth: collectionSize.width).size
+            return self.layouter.size(for: data, constraintWidth: collectionSize.width)
         }
         return BasicProvider<ViewModel, UIView>(dataSource: datasource, viewSource: viewsource, sizeSource: sizesource)
     }()
     
     lazy var viewController: CollectionViewController = {
-        return CollectionViewController(provider: provider, collectionView: collectionView)
+        let viewController = CollectionViewController(provider: provider, collectionView: collectionView)
+        viewController.title = "History"
+        return viewController
     }()
     
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
-        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter), subLayouter: TransactionViewLayouter(), dividerBuilder: DividerViewBuilder())
+        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter()), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
+        let loadingViewBuilder = LoadingViewBuilder(layouter: LoadingViewLayouter())
+        builders[String(describing: LoadingViewModel.self)] = loadingViewBuilder
+        loadingViewBuilder.onVisible = { [weak self] in
+            self?.datasource.fetchNextPage(completion: nil)
+        }
         return builders
     }()
     
@@ -49,6 +56,7 @@ final class TransactionListPageBuilder {
     lazy var layouters: [String: ViewLayouter] = {
         var layouters = [String: ViewLayouter]()
         layouters[String(describing: TransactionViewModel.self)] = DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter())
+        layouters[String(describing: LoadingViewModel.self)] = LoadingViewLayouter()
         return layouters
     }()
 }

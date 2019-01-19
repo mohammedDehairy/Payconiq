@@ -9,5 +9,6 @@
 import UIKit
 
 protocol ViewLayouter {
-    func layout(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGRect
+    func layout(view: UIView, data: ViewModel, index: Int, constraintWidth: CGFloat)
+    func size(for viewModel: ViewModel, constraintWidth: CGFloat) -> CGSize
 }
