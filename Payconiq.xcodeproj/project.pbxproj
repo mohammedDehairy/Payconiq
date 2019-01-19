@@ -44,6 +44,7 @@
 		3D1F8B5C21F3CE8F00D78747 /* TransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B1921F335DC00D78747 /* TransactionDataSource.swift */; };
 		3D1F8B5D21F3CEBF00D78747 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B0D21F328AD00D78747 /* TransactionViewModel.swift */; };
 		3D1F8B5E21F3CECF00D78747 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B5421F3C3F100D78747 /* LoadingViewModel.swift */; };
+		3D1F8B6021F3D90800D78747 /* TransactionListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F8B5F21F3D90800D78747 /* TransactionListUITest.swift */; };
 		3D69EE2921F31DAF006209F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2821F31DAF006209F1 /* AppDelegate.swift */; };
 		3D69EE2B21F31DAF006209F1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69EE2A21F31DAF006209F1 /* RootViewController.swift */; };
 		3D69EE2E21F31DAF006209F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D69EE2C21F31DAF006209F1 /* Main.storyboard */; };
@@ -107,6 +108,7 @@
 		3D1F8B5621F3C41500D78747 /* LoadingViewLayouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewLayouter.swift; sourceTree = "<group>"; };
 		3D1F8B5821F3C44000D78747 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3D1F8B5A21F3CE8900D78747 /* TransactionDataSourceIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataSourceIntegrationTest.swift; sourceTree = "<group>"; };
+		3D1F8B5F21F3D90800D78747 /* TransactionListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUITest.swift; sourceTree = "<group>"; };
 		3D69EE2521F31DAF006209F1 /* Payconiq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payconiq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D69EE2821F31DAF006209F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D69EE2A21F31DAF006209F1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			children = (
 				3D69EE4B21F31DB1006209F1 /* PayconiqUITests.swift */,
 				3D69EE4D21F31DB1006209F1 /* Info.plist */,
+				3D1F8B5F21F3D90800D78747 /* TransactionListUITest.swift */,
 			);
 			path = PayconiqUITests;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1F8B6021F3D90800D78747 /* TransactionListUITest.swift in Sources */,
 				3D69EE4C21F31DB1006209F1 /* PayconiqUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

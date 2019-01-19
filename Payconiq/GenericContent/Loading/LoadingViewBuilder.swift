@@ -27,6 +27,8 @@ final class LoadingViewBuilder: ViewBuilder {
         guard let view = view as? LoadingView else { return }
         let constraintWidth = UIScreen.main.bounds.width
         layouter.layout(view: view, data: model, index: index, constraintWidth: constraintWidth)
+        view.spinner.isAccessibilityElement = true
+        view.spinner.accessibilityIdentifier = "loading"
         onVisible?()
     }
 }

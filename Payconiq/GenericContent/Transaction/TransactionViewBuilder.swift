@@ -32,6 +32,7 @@ final class TransactionViewBuilder: ViewBuilder {
         view.amoutLabel.font = UIFont.boldSystemFont(ofSize: 20)
         view.textLabel.font = UIFont.systemFont(ofSize: 15)
         view.dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        view.textLabel.accessibilityIdentifier = "transaction_\(index)"
         layouter.layout(view: view, data: model, index: index, constraintWidth: constraintWidth)
     }
 }

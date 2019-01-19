@@ -26,6 +26,8 @@ class TransactionDetailsViewController: UIViewController {
             amountLabel.font = UIFont.boldSystemFont(ofSize: 30)
             dateLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
         }
+        amountLabel.isAccessibilityElement = true
+        amountLabel.accessibilityIdentifier = "details_page_amount_label"
     }
 
 }

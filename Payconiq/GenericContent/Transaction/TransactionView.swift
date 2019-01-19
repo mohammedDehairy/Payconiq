@@ -18,6 +18,7 @@ final class TransactionView: UIView {
         addSubview(amoutLabel)
         addSubview(textLabel)
         addSubview(dateLabel)
+        textLabel.isAccessibilityElement = true
     }
     
     required init?(coder aDecoder: NSCoder) {
