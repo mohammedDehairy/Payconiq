@@ -18,7 +18,7 @@ struct TransactionViewModelParser: ViewModelParser {
         let jsonData = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.init(rawValue: 0))
         guard let json = jsonData as? Array<Dictionary<String, Any>> else { return [] }
         var result = [TransactionViewModel]()
-        for (index, transaction) in json.enumerated() {
+        for transaction in json {
             guard let coordinates = transaction["coordinates"] as? String else { continue }
             guard let latitudeStr = coordinates.split(separator: ",").first?.trimmingCharacters(in: .whitespaces) else { continue }
             guard let longitudeStr = coordinates.split(separator: ",").last?.trimmingCharacters(in: .whitespaces) else { continue }

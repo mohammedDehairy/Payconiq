@@ -9,7 +9,7 @@
 import CollectionKit
 
 final class TransactionDataSource: DataSource<ViewModel> {
-    private var _datasource: [ViewModel] = []
+    private(set) var _datasource: [ViewModel] = []
     private let parser: ViewModelParser
     private let starterUrl = "http://demo5481020.mockable.io/transactions"
     private var nextpPageUrl: String?
@@ -21,24 +21,40 @@ final class TransactionDataSource: DataSource<ViewModel> {
     func start(completion: (()->Void)?) {
         fetch(url: starterUrl, completion: {[weak self] result in
             DispatchQueue.main.async {
-                self?._datasource = result
-                self?._datasource.append(LoadingViewModel())
-                self?.reloadData()
+                self?.hardReload(data: result)
                 completion?()
             }
         })
     }
     
+    private func hardReload(data: [ViewModel]) {
+        _datasource = data
+        _datasource.append(LoadingViewModel())
+        reloadData()
+    }
+    
     func fetchNextPage(completion: (()->Void)?) {
-        guard let nextpPageUrl = nextpPageUrl, !nextpPageUrl.isEmpty else { return }
+        guard let nextpPageUrl = nextpPageUrl, !nextpPageUrl.isEmpty else { completion?(); return }
         fetch(url: nextpPageUrl, completion: {[weak self] result in
             DispatchQueue.main.async {
-                guard let _self = self else { completion?(); return}
-                _self._datasource.insert(contentsOf: result, at: _self._datasource.count - 1)
-                _self.reloadData()
+                self?.append(data: result)
                 completion?()
             }
         })
+    }
+    
+    private func append(data: [ViewModel]) {
+        removeLoadingModel()
+        _datasource.append(contentsOf: data)
+        _datasource.append(LoadingViewModel())
+        reloadData()
+    }
+    
+    private func removeLoadingModel() {
+        if let _ = _datasource.last as? LoadingViewModel {
+            _datasource.removeLast()
+            reloadData()
+        }
     }
     
     private func fetch(url: String, completion: (([ViewModel])->Void)?) {

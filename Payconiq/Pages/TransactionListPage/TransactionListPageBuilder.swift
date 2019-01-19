@@ -41,12 +41,12 @@ final class TransactionListPageBuilder {
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
         builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter()), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
-        let loadingViewBuilder = LoadingViewBuilder(layouter: LoadingViewLayouter())
         builders[String(describing: LoadingViewModel.self)] = loadingViewBuilder
-        loadingViewBuilder.onVisible = { [weak self] in
-            self?.datasource.fetchNextPage(completion: nil)
-        }
         return builders
+    }()
+    
+    lazy var loadingViewBuilder: LoadingViewBuilder = {
+        return LoadingViewBuilder(layouter: LoadingViewLayouter())
     }()
     
     lazy var layouter: CompoundViewLayouter = {

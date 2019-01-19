@@ -13,8 +13,8 @@ import RxViewController
 
 final class TransactionPageController {
     let builder: TransactionListPageBuilder
-    weak var presenter: TransactionDetailsPresenter?
-    let disposeBag = DisposeBag()
+    private weak var presenter: TransactionDetailsPresenter?
+    private let disposeBag = DisposeBag()
     init(builder: TransactionListPageBuilder, presenter: TransactionDetailsPresenter) {
         self.builder = builder
         self.presenter = presenter
@@ -22,18 +22,27 @@ final class TransactionPageController {
     }
     
     private func startListening() {
+        let refreshControl = builder.viewController.refreshControl
         builder.viewController.rx.viewDidLoad.subscribe({ [weak self] _ in
-            self?.builder.datasource.start(completion: nil)
-            }).disposed(by: disposeBag)
+            refreshControl.beginRefreshing()
+            self?.builder.datasource.start {
+                refreshControl.endRefreshing()
+            }
+        }).disposed(by: disposeBag)
+        
         builder.provider.tapHandler = {[weak self] context in
             self?.handle(context: context)
         }
-        let refreshControl = builder.viewController.refreshControl
+        
         refreshControl.rx.controlEvent(.valueChanged).subscribe({ [weak self] _ in
             self?.builder.datasource.start(completion: {
                 refreshControl.endRefreshing()
             })
         }).disposed(by: disposeBag)
+        
+        builder.loadingViewBuilder.onVisible = {[weak self] in
+            self?.builder.datasource.fetchNextPage(completion: nil)
+        }
     }
     
     private func handle(context: BasicProvider<ViewModel, UIView>.TapContext) {
