@@ -29,6 +29,8 @@ cd path/to/project/root/directory
 ./ci_unit_tests.sh
 ```
 
+Note: unit test classes are added underneath the class that it tests in the project
+
 # Execute UI tests
 1. change directory to the project root directory
 2. run 
