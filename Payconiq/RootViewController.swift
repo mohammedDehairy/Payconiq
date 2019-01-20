@@ -38,11 +38,8 @@ class RootViewController: UIViewController, TransactionDetailsPresenter {
     }
     
     func presen(model: TransactionViewModel, animated: Bool, completion: (() -> Void)) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailsViewController = storyboard.instantiateViewController(withIdentifier: "TransactionDetailsViewController") as? TransactionDetailsViewController else { return }
+        let detailsViewController = TransactionDetailsViewController()
         detailsViewController.model = model
-        detailsViewController.title = model.description
-        detailsViewController.view.backgroundColor = UIColor.white
         navigationViewController.pushViewController(detailsViewController, animated: true)
     }
     

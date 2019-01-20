@@ -20,10 +20,10 @@ struct TransactionViewModelParser: ViewModelParser {
         var result = [TransactionViewModel]()
         for transaction in json {
             guard let coordinates = transaction["coordinates"] as? String else { continue }
-            guard let latitudeStr = coordinates.split(separator: ",").first?.trimmingCharacters(in: .whitespaces) else { continue }
-            guard let longitudeStr = coordinates.split(separator: ",").last?.trimmingCharacters(in: .whitespaces) else { continue }
-            guard let latitude = Double(latitudeStr) else { continue }
+            guard let longitudeStr = coordinates.split(separator: ",").first?.trimmingCharacters(in: .whitespaces) else { continue }
+            guard let latitudeStr = coordinates.split(separator: ",").last?.trimmingCharacters(in: .whitespaces) else { continue }
             guard let longitude = Double(longitudeStr) else { continue }
+            guard let latitude = Double(latitudeStr) else { continue }
             guard let dateStr = transaction["date"] as? String else { continue }
             guard let date = dateFormatter.date(from: dateStr) else { continue }
             guard let effectiveDateStr = transaction["effective date"] as? String else { continue }
