@@ -12,8 +12,8 @@ PODS:
     - RxSwift (>= 4.0.0)
 
 DEPENDENCIES:
-  - CollectionKit
-  - RxViewController
+  - CollectionKit (= 2.3.0)
+  - RxViewController (= 0.4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   RxViewController: 359bbc2fda373a78605b2735afb0f9f4f3f6c3e4
 
-PODFILE CHECKSUM: 2db5fef7f9c5fe5ec214453c09b526a65dcff5f6
+PODFILE CHECKSUM: 058c72f98cdfcd40204b3260e7c75b61383de7ed
 
 COCOAPODS: 1.5.3
