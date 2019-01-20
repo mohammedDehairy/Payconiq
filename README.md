@@ -17,6 +17,7 @@ cd path/to/project/root/directory
 ```
 ./init_project.sh
 ```
+3. open Payconiq.xcworkspace
 
 # Execute unit tests
 1. change directory to the project root directory 
