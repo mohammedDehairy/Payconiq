@@ -11,17 +11,18 @@ import CollectionKit
 import RxSwift
 import RxViewController
 
-final class TransactionPageController {
-    let builder: TransactionListPageBuilder
+final class TransactionPageController: PageController {
+    let builder: PageBuilder
+    private let transactionListBuilder: TransactionListPageBuilder
     private weak var presenter: TransactionDetailsPresenter?
     private let disposeBag = DisposeBag()
     init(builder: TransactionListPageBuilder, presenter: TransactionDetailsPresenter) {
         self.builder = builder
+        self.transactionListBuilder = builder
         self.presenter = presenter
-        self.startListening()
     }
     
-    private func startListening() {
+    func startListening() {
         let refreshControl = builder.viewController.refreshControl
         builder.viewController.rx.viewDidLoad.subscribe({ [weak self] _ in
             refreshControl.beginRefreshing()
@@ -40,7 +41,7 @@ final class TransactionPageController {
             })
         }).disposed(by: disposeBag)
         
-        builder.loadingViewBuilder.onVisible = {[weak self] in
+        transactionListBuilder.loadingViewBuilder.onVisible = {[weak self] in
             self?.builder.datasource.fetchNextPage(completion: nil)
         }
     }

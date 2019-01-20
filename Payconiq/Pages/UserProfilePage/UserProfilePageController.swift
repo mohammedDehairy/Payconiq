@@ -11,19 +11,15 @@ import CollectionKit
 import RxSwift
 import RxViewController
 
-final class UserProfilePageController {
-    let builder: UserProfilePageBuilder
+final class UserProfilePageController: PageController {
+    let builder: PageBuilder
     private let disposeBag = DisposeBag()
     
-    init(builder: UserProfilePageBuilder) {
+    init(builder: PageBuilder) {
         self.builder = builder
     }
     
-    func activate() {
-        startListening()
-    }
-    
-    private func startListening() {
+    func startListening() {
         let refreshControl = builder.viewController.refreshControl
         builder.viewController.rx.willMoveToParentViewController.subscribe({ [weak self] _ in
             refreshControl.beginRefreshing()

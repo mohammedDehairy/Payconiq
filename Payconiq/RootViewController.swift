@@ -10,11 +10,11 @@ import UIKit
 import CollectionKit
 
 class RootViewController: UIViewController, TransactionDetailsPresenter {
-    private lazy var transactionController: TransactionPageController = {
+    private lazy var transactionController: PageController = {
         return TransactionPageController(builder: TransactionListPageBuilder(), presenter: self)
     }()
     
-    private lazy var userProfileController: UserProfilePageController = {
+    private lazy var userProfileController: PageController = {
         return UserProfilePageController(builder: UserProfilePageBuilder())
     }()
     
@@ -24,6 +24,7 @@ class RootViewController: UIViewController, TransactionDetailsPresenter {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        transactionController.startListening()
         navigationViewController.willMove(toParent: self)
         addChild(navigationViewController)
         view.addSubview(navigationViewController.view)
@@ -46,7 +47,7 @@ class RootViewController: UIViewController, TransactionDetailsPresenter {
     }
     
     @objc func presentUserProfilePage() {
-        userProfileController.activate()
+        userProfileController.startListening()
         navigationViewController.pushViewController(userProfileController.builder.viewController, animated: true)
     }
 }

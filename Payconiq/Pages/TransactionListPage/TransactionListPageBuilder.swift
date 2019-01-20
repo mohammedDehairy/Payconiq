@@ -9,7 +9,7 @@
 import CollectionKit
 import UIKit
 
-final class TransactionListPageBuilder {
+final class TransactionListPageBuilder: PageBuilder {
     lazy var collectionView: CollectionView = {
         return CollectionView(provider: provider)
     }()
