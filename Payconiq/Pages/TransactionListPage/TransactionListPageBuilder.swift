@@ -45,7 +45,7 @@ final class TransactionListPageBuilder: PageBuilder {
     
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
-        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter(), screenWidthProvider: screenWidthProvider), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
+        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter(dateFormatter: dateFormatter), screenWidthProvider: screenWidthProvider), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(dateFormatter: dateFormatter), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
         builders[String(describing: LoadingViewModel.self)] = loadingViewBuilder
         return builders
     }()
@@ -60,7 +60,7 @@ final class TransactionListPageBuilder: PageBuilder {
     
     lazy var layouters: [String: ViewLayouter] = {
         var layouters = [String: ViewLayouter]()
-        layouters[String(describing: TransactionViewModel.self)] = DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter())
+        layouters[String(describing: TransactionViewModel.self)] = DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(dateFormatter: dateFormatter), dividerLayouter: DividerViewLayouter())
         layouters[String(describing: LoadingViewModel.self)] = LoadingViewLayouter()
         return layouters
     }()

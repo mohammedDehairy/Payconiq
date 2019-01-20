@@ -28,6 +28,8 @@ final class TransactionViewBuilder: ViewBuilder {
         guard let view = view as? TransactionView else { return }
         view.amoutLabel.text = model.amount
         view.textLabel.text = model.description
+        view.textLabel.numberOfLines = 0
+        view.textLabel.lineBreakMode = .byWordWrapping
         view.amoutLabel.textColor = model.amount.hasPrefix("-") ? UIColor.defaultRed : UIColor.defaultGreen
         view.dateLabel.text = dateFormatter.string(from: model.date)
         view.amoutLabel.font = UIFont.boldSystemFont(ofSize: 20)
