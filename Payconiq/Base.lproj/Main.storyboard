@@ -55,9 +55,9 @@
                         <viewLayoutGuide key="safeArea" id="19e-OS-2Ww"/>
                     </view>
                     <connections>
-                        <outlet property="amountLabel" destination="Ykh-fA-fQV" id="qNX-cY-rHL"/>
+                        <outlet property="amountLabel" destination="Ykh-fA-fQV" id="k4I-gp-3DL"/>
                         <outlet property="dateLabel" destination="IyO-FS-u2J" id="fIl-jd-7l8"/>
-                        <outlet property="view" destination="Ykh-fA-fQV" id="3BP-Vm-5RW"/>
+                        <outlet property="view" destination="l4X-10-GKR" id="qwZ-36-fSC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJp-c1-GV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
