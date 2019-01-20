@@ -37,3 +37,8 @@ cd path/to/project/root/directory
 
 Note: UI tests are failing at the moment, and appears to be an XCUITest bug, where the accessibilty elements are present but
 XCode UI test framework assertions are failing for some reason
+
+# Dependencies
+1. CollectionKit 2.3.0
+   1. RxSwift
+   2. RxCocoa
