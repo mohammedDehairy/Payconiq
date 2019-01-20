@@ -40,5 +40,6 @@ XCode UI test framework assertions are failing for some reason
 
 # Dependencies
 1. CollectionKit 2.3.0
+2. RxViewController 0.4.0
    1. RxSwift
    2. RxCocoa
