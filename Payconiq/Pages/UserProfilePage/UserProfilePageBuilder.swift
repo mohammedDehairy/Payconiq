@@ -1,27 +1,27 @@
 //
-//  TransactionListBuilder.swift
+//  UserProfilePageBuilder.swift
 //  Payconiq
 //
-//  Created by mohamed mohamed El Dehairy on 1/19/19.
+//  Created by mohamed mohamed El Dehairy on 1/20/19.
 //  Copyright © 2019 mohamed El Dehairy. All rights reserved.
 //
 
 import CollectionKit
 import UIKit
 
-final class TransactionListPageBuilder {
+final class UserProfilePageBuilder {
     lazy var collectionView: CollectionView = {
         return CollectionView(provider: provider)
     }()
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yy HH:mm"
+        dateFormatter.dateFormat = "dd/mm/yyyy"
         return dateFormatter
     }()
     
     lazy var datasource: PayconiqDataSource = {
-        return TransactionDataSource(parser: TransactionViewModelParser(dateFormatter: dateFormatter), starterUrl: "http://demo5481020.mockable.io/transactions")
+        return UserProfilePageDataSource(parser: UserProfileParser(dateFormatter: dateFormatter), starterUrl: "http://demo5481020.mockable.io/userinfo")
     }()
     
     lazy var provider: BasicProvider<ViewModel, UIView> = {
@@ -34,19 +34,15 @@ final class TransactionListPageBuilder {
     
     lazy var viewController: CollectionViewController = {
         let viewController = CollectionViewController(collectionView: collectionView)
-        viewController.title = "History"
+        viewController.title = "User Profile"
+        viewController.view.backgroundColor = UIColor.white
         return viewController
     }()
     
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
-        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter()), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
-        builders[String(describing: LoadingViewModel.self)] = loadingViewBuilder
+        builders[String(describing: UserProfileViewModel.self)] = UserProfileViewBuilder(layouter: UserProfileViewLayouter())
         return builders
-    }()
-    
-    lazy var loadingViewBuilder: LoadingViewBuilder = {
-        return LoadingViewBuilder(layouter: LoadingViewLayouter())
     }()
     
     lazy var layouter: CompoundViewLayouter = {
@@ -55,8 +51,7 @@ final class TransactionListPageBuilder {
     
     lazy var layouters: [String: ViewLayouter] = {
         var layouters = [String: ViewLayouter]()
-        layouters[String(describing: TransactionViewModel.self)] = DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter())
-        layouters[String(describing: LoadingViewModel.self)] = LoadingViewLayouter()
+        layouters[String(describing: UserProfileViewModel.self)] = UserProfileViewLayouter()
         return layouters
     }()
 }

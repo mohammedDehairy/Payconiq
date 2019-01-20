@@ -10,12 +10,16 @@ import UIKit
 import CollectionKit
 
 class RootViewController: UIViewController, TransactionDetailsPresenter {
-    private lazy var controller: TransactionPageController = {
+    private lazy var transactionController: TransactionPageController = {
         return TransactionPageController(builder: TransactionListPageBuilder(), presenter: self)
     }()
     
+    private lazy var userProfileController: UserProfilePageController = {
+        return UserProfilePageController(builder: UserProfilePageBuilder())
+    }()
+    
     private lazy var navigationViewController: UINavigationController = {
-        return UINavigationController(rootViewController: controller.builder.viewController)
+        return UINavigationController(rootViewController: transactionController.builder.viewController)
     }()
     
     override func viewDidLoad() {
@@ -24,6 +28,7 @@ class RootViewController: UIViewController, TransactionDetailsPresenter {
         addChild(navigationViewController)
         view.addSubview(navigationViewController.view)
         navigationViewController.didMove(toParent: nil)
+        transactionController.builder.viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "User Profile", style: .plain, target: self, action: #selector(presentUserProfilePage))
     }
     
     override func viewDidLayoutSubviews() {
@@ -38,6 +43,11 @@ class RootViewController: UIViewController, TransactionDetailsPresenter {
         detailsViewController.title = model.description
         detailsViewController.view.backgroundColor = UIColor.white
         navigationViewController.pushViewController(detailsViewController, animated: true)
+    }
+    
+    @objc func presentUserProfilePage() {
+        userProfileController.activate()
+        navigationViewController.pushViewController(userProfileController.builder.viewController, animated: true)
     }
 }
 

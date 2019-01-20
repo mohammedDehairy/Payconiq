@@ -10,12 +10,9 @@ import UIKit
 import CollectionKit
 
 class CollectionViewController: UIViewController {
-
-    private let provider: BasicProvider<ViewModel, UIView>
     private let collectionView: CollectionView
     let refreshControl: UIRefreshControl
-    init(provider: BasicProvider<ViewModel, UIView>, collectionView: CollectionView) {
-        self.provider = provider
+    init(collectionView: CollectionView) {
         self.collectionView = collectionView
         self.refreshControl = UIRefreshControl()
         super.init(nibName: nil, bundle: nil)
