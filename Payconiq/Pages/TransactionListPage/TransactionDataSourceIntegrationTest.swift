@@ -12,7 +12,7 @@ class TransactionDataSourceIntegrationTest: XCTestCase {
     func test_start_and_fetchNextPage() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-mm-yy HH:mm"
-        let sut = TransactionDataSource(parser: TransactionViewModelParser(dateFormatter: dateFormatter))
+        let sut = TransactionDataSource(parser: TransactionViewModelParser(dateFormatter: dateFormatter), starterUrl: "http://demo5481020.mockable.io/transactions")
         let completionExpectation = expectation(description: "Expect TransactionDataSource completion to be called")
         completionExpectation.expectedFulfillmentCount = 2
         sut.start {
