@@ -52,6 +52,13 @@ or
 Note: UI tests are failing at the moment, and appears to be an XCUITest bug, where the accessibilty elements are present but
 XCode UI test framework assertions are failing for some reason
 
+# Build script
+1. run
+```
+./ci_build.sh
+```
+for usage
+
 # Dependencies
 1. CollectionKit 2.3.0
 2. RxViewController 0.4.0
