@@ -10,6 +10,11 @@ import CollectionKit
 import UIKit
 
 final class TransactionListPageBuilder: PageBuilder {
+    let screenWidthProvider: ScreenWidthProvider
+    init(screenWidthProvider: ScreenWidthProvider) {
+        self.screenWidthProvider = screenWidthProvider
+    }
+    
     lazy var collectionView: CollectionView = {
         return CollectionView(provider: provider)
     }()
@@ -40,13 +45,13 @@ final class TransactionListPageBuilder: PageBuilder {
     
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
-        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter()), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
+        builders[String(describing: TransactionViewModel.self)] = DividerDecoratorViewBuilder(subBuilder: TransactionViewBuilder(dateFormatter: dateFormatter, layouter: TransactionViewLayouter(), screenWidthProvider: screenWidthProvider), layouter: DividerDecoratorViewLayouter(subLayouter: TransactionViewLayouter(), dividerLayouter: DividerViewLayouter()), dividerBuilder: DividerViewBuilder())
         builders[String(describing: LoadingViewModel.self)] = loadingViewBuilder
         return builders
     }()
     
     lazy var loadingViewBuilder: LoadingViewBuilder = {
-        return LoadingViewBuilder(layouter: LoadingViewLayouter())
+        return LoadingViewBuilder(layouter: LoadingViewLayouter(), screenWidthProvider: screenWidthProvider)
     }()
     
     lazy var layouter: CompoundViewLayouter = {

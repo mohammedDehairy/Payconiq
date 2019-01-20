@@ -10,9 +10,11 @@ import CollectionKit
 
 final class LoadingViewBuilder: ViewBuilder {
     let layouter: ViewLayouter
+    let screenWidthProvider: ScreenWidthProvider
     var onVisible: (()->Void)?
-    init(layouter: ViewLayouter) {
+    init(layouter: ViewLayouter, screenWidthProvider: ScreenWidthProvider) {
         self.layouter = layouter
+        self.screenWidthProvider = screenWidthProvider
     }
     override func view(data: ViewModel, index: Int) -> UIView {
         guard data is LoadingViewModel else { return UIView() }
@@ -25,8 +27,7 @@ final class LoadingViewBuilder: ViewBuilder {
     override func update(view: UIView, data: ViewModel, index: Int) {
         guard let model = data as? LoadingViewModel else { return }
         guard let view = view as? LoadingView else { return }
-        let constraintWidth = UIScreen.main.bounds.width
-        layouter.layout(view: view, data: model, index: index, constraintWidth: constraintWidth)
+        layouter.layout(view: view, data: model, index: index, constraintWidth: screenWidthProvider.screenWidth)
         view.spinner.isAccessibilityElement = true
         view.spinner.accessibilityIdentifier = "loading"
         onVisible?()

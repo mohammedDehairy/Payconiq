@@ -10,10 +10,12 @@ import CollectionKit
 
 final class TransactionViewBuilder: ViewBuilder {
     let dateFormatter: DateFormatter
+    let screenWidthProvider: ScreenWidthProvider
     let layouter: ViewLayouter
-    init(dateFormatter: DateFormatter, layouter: ViewLayouter) {
+    init(dateFormatter: DateFormatter, layouter: ViewLayouter, screenWidthProvider: ScreenWidthProvider) {
         self.dateFormatter = dateFormatter
         self.layouter = layouter
+        self.screenWidthProvider = screenWidthProvider
     }
     override func view(data: ViewModel, index: Int) -> UIView {
         guard data is TransactionViewModel else { return UIView() }
@@ -24,7 +26,6 @@ final class TransactionViewBuilder: ViewBuilder {
     override func update(view: UIView, data: ViewModel, index: Int) {
         guard let model = data as? TransactionViewModel else { return }
         guard let view = view as? TransactionView else { return }
-        let constraintWidth = UIScreen.main.bounds.width
         view.amoutLabel.text = model.amount
         view.textLabel.text = model.description
         view.amoutLabel.textColor = model.amount.hasPrefix("-") ? UIColor.defaultRed : UIColor.defaultGreen
@@ -33,6 +34,6 @@ final class TransactionViewBuilder: ViewBuilder {
         view.textLabel.font = UIFont.systemFont(ofSize: 15)
         view.dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
         view.textLabel.accessibilityIdentifier = "transaction_\(index)"
-        layouter.layout(view: view, data: model, index: index, constraintWidth: constraintWidth)
+        layouter.layout(view: view, data: model, index: index, constraintWidth: screenWidthProvider.screenWidth)
     }
 }

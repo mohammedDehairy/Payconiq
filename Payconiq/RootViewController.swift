@@ -9,13 +9,28 @@
 import UIKit
 import CollectionKit
 
+protocol ScreenWidthProvider {
+    var screenWidth: CGFloat { get }
+}
+
+final class DefaultScreenWidthProvider: ScreenWidthProvider {
+    let view: UIView
+    init(view: UIView) {
+        self.view = view
+    }
+    
+    var screenWidth: CGFloat {
+        return view.bounds.size.width - view.safeAreaInsets.left - view.safeAreaInsets.right
+    }
+}
+
 class RootViewController: UIViewController, TransactionDetailsPresenter {
     private lazy var transactionController: PageController = {
-        return TransactionPageController(builder: TransactionListPageBuilder(), presenter: self)
+        return TransactionPageController(builder: TransactionListPageBuilder(screenWidthProvider: DefaultScreenWidthProvider(view: view)), presenter: self)
     }()
     
     private lazy var userProfileController: PageController = {
-        return UserProfilePageController(builder: UserProfilePageBuilder())
+        return UserProfilePageController(builder: UserProfilePageBuilder(screenWidthProvider: DefaultScreenWidthProvider(view: view)))
     }()
     
     private lazy var navigationViewController: UINavigationController = {

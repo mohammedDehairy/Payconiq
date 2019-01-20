@@ -10,6 +10,10 @@ import CollectionKit
 import UIKit
 
 final class UserProfilePageBuilder: PageBuilder {
+    let screenWidthProvider: ScreenWidthProvider
+    init(screenWidthProvider: ScreenWidthProvider) {
+        self.screenWidthProvider = screenWidthProvider
+    }
     lazy var collectionView: CollectionView = {
         return CollectionView(provider: provider)
     }()
@@ -41,7 +45,7 @@ final class UserProfilePageBuilder: PageBuilder {
     
     lazy var builders: [String: ViewBuilder] = {
         var builders = [String: ViewBuilder]()
-        builders[String(describing: UserProfileViewModel.self)] = UserProfileViewBuilder(layouter: UserProfileViewLayouter())
+        builders[String(describing: UserProfileViewModel.self)] = UserProfileViewBuilder(layouter: UserProfileViewLayouter(), screenWidthProvider: screenWidthProvider)
         return builders
     }()
     
