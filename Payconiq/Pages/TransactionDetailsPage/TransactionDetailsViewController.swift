@@ -13,7 +13,7 @@ class TransactionDetailsViewController: UIViewController {
     var model: TransactionViewModel?
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yy HH:mm"
+        dateFormatter.dateFormat = "dd-MM-yy HH:mm"
         return dateFormatter
     }()
     private let scrollView: UIScrollView = UIScrollView(frame: CGRect.zero)

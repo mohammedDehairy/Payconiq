@@ -21,13 +21,15 @@ class TransactionViewModelParserTest: XCTestCase {
         XCTAssertTrue(objects is [TransactionViewModel])
         let transactions = objects as! [TransactionViewModel]
         XCTAssertEqual(transactions.count, 3)
-        XCTAssertEqual(transactions[0].coordinates.coordinate.latitude, 4.8432112)
-        XCTAssertEqual(transactions[0].coordinates.coordinate.longitude, 52.3872824)
+        XCTAssertEqual(transactions[0].coordinates.coordinate.longitude, 4.8432112)
+        XCTAssertEqual(transactions[0].coordinates.coordinate.latitude, 52.3872824)
         
         XCTAssertEqual(transactions[1].description, "Transaction 2")
         XCTAssertEqual(transactions[0].date, dateFormatter.date(from: "8-01-18 14:18"))
-        XCTAssertEqual(transactions[2].coordinates.coordinate.latitude, 4.8422241)
-        XCTAssertEqual(transactions[2].coordinates.coordinate.longitude, 52.3877146)
+        XCTAssertEqual(transactions[1].date, dateFormatter.date(from: "9-01-18 13:12"))
+        XCTAssertEqual(transactions[2].date, dateFormatter.date(from: "18-01-18 20:39"))
+        XCTAssertEqual(transactions[2].coordinates.coordinate.longitude, 4.8422241)
+        XCTAssertEqual(transactions[2].coordinates.coordinate.latitude, 52.3877146)
     }
 
 }

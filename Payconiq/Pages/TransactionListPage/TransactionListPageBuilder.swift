@@ -21,7 +21,7 @@ final class TransactionListPageBuilder: PageBuilder {
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yy HH:mm"
+        dateFormatter.dateFormat = "dd-MM-yy HH:mm"
         return dateFormatter
     }()
     
