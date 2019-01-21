@@ -11,19 +11,19 @@ import CollectionKit
 class ViewBuilder: ViewSource<ViewModel, UIView> { }
 
 class CompoundViewBuilder: ViewSource<ViewModel, UIView> {
-    private let builders: [String: Any]
-    init(builders: [String: Any]) {
+    private let builders: [String: ViewBuilder]
+    init(builders: [String: ViewBuilder]) {
         self.builders = builders
     }
     override func view(data: ViewModel, index: Int) -> UIView {
-        guard let builder = builders[String(describing: type(of: data))] as? ViewBuilder else { return UIView() }
+        guard let builder = builders[String(describing: type(of: data))] else { return UIView() }
         let view = reuseManager.dequeue(builder.view(data: data, index: index))
         update(view: view, data: data, index: index)
         return view
     }
     
     override func update(view: UIView, data: ViewModel, index: Int) {
-        guard let builder = builders[String(describing: type(of: data))] as? ViewBuilder else { return }
+        guard let builder = builders[String(describing: type(of: data))] else { return }
         return builder.update(view: view, data: data, index: index)
     }
 }
